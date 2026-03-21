@@ -4,6 +4,114 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Language Selector Logic ---
+    const langToggleBtn = document.getElementById('lang-toggle');
+    let currentLang = 'es'; // Default is Spanish as requested
+
+    const translations = {
+        'es': {
+            'rituals': 'RITUALES',
+            'echoes': 'ECOS',
+            'relics': 'RELIQUIAS',
+            'assembly': 'ASAMBLEA',
+            'lineup': 'ALQUIMISTAS',
+            'discography': 'DISCOGRAFÍA',
+            'latest-echoes': 'ÚLTIMOS ECOS',
+            'tagline': 'El proceso alquímico del sonido. Capturado dentro del vacío de obsidiana.',
+            'featured-label': 'RITUAL COMPLETO',
+            'featured-title': 'EL RITUAL DE LA LUZ',
+            'ep-recovery': 'RECUPERACIÓN DE EP',
+            'single-trans': 'TRANSMISIÓN SENCILLA',
+            'stream': 'REPRODUCIR',
+            'world-ritual': 'RITUALES 2026',
+            'upcoming': 'PRÓXIMAS FASES',
+            'reserve': 'RESERVAR',
+            'extinguished': 'AGOTADO',
+            'view-all': 'VER TODAS LAS FASES',
+            'artifacts': 'ARTEFACTOS',
+            'armory': 'RELIQUIAS',
+            'lineup-label': 'EQUIPO',
+            'lineup-title': 'ALQUIMISTAS',
+            'role-vocals': 'Voz Líder / Compositor',
+            'role-guitar': 'Bajo / Productor',
+            'role-keys': 'Voz / Coros',
+            'role-drums': '1° Guitarra',
+            'role-bass': '2° Guitarra',
+            'role-rituals': 'Batería',
+            'collect': 'COLECCIONAR',
+            'vault': 'ACCEDER A LA CRIPTA',
+            'join': 'ÚNETE AL COLECTIVO',
+            'receive': 'RECIBE TRANSMISIONES DESDE EL VACÍO.',
+            'subscribe': 'SUSCRIBIRSE',
+            'privacy': 'Privacidad',
+            'terms': 'Términos',
+            'press': 'Prensa',
+            'contact': 'Contacto',
+            'rights': '© MMXXIV SIENTES. TODOS LOS DERECHOS RESERVADOS.',
+            'laws': 'DISEÑADO BAJO LAS LEYES DEL VACÍO'
+        },
+        'en': {
+            'rituals': 'RITUALS',
+            'echoes': 'ECHOES',
+            'relics': 'RELICS',
+            'assembly': 'ASSEMBLY',
+            'lineup': 'ALCHEMISTS',
+            'discography': 'DISCOGRAPHY',
+            'latest-echoes': 'LATEST ECHOES',
+            'tagline': 'The alchemical process of sound. Captured within the obsidian void.',
+            'featured-label': 'FULL LENGTH RITUAL',
+            'featured-title': 'THE RITUAL OF LIGHT',
+            'ep-recovery': 'EP RECOVERY',
+            'single-trans': 'SINGLE TRANSMISSION',
+            'stream': 'STREAM',
+            'world-ritual': 'RITUALS 2026',
+            'upcoming': 'UPCOMING PHASES',
+            'reserve': 'RESERVE',
+            'extinguished': 'EXTINGUISHED',
+            'view-all': 'VIEW ALL PHASES',
+            'artifacts': 'ARTIFACTS',
+            'armory': 'RELICS',
+            'lineup-label': 'LINEUP',
+            'lineup-title': 'ALCHEMISTS',
+            'role-vocals': 'Lead Vocals / Composer',
+            'role-guitar': 'Bass / Producer',
+            'role-keys': 'Vocals / Backing Vocals',
+            'role-drums': '1st Guitar',
+            'role-bass': '2nd Guitar',
+            'role-rituals': 'Drums',
+            'collect': 'COLLECT',
+            'vault': 'ACCESS THE VAULT',
+            'join': 'JOIN THE COLLECTIVE',
+            'receive': 'RECEIVE TRANSMISSIONS FROM THE VOID.',
+            'subscribe': 'SUBSCRIBE',
+            'privacy': 'Privacy',
+            'terms': 'Terms',
+            'press': 'Press',
+            'contact': 'Contact',
+            'rights': '© MMXXIV SIENTES. ALL RIGHTS RESERVED.',
+            'laws': 'DESIGNED UNDER THE LAWS OF THE VOID'
+        }
+    };
+
+    const updateLanguage = (lang) => {
+        document.querySelectorAll('[data-lang-key]').forEach(el => {
+            const key = el.getAttribute('data-lang-key');
+            if (translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        document.documentElement.lang = lang;
+        langToggleBtn.textContent = lang === 'es' ? 'ES / EN' : 'EN / ES';
+    };
+
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            updateLanguage(currentLang);
+        });
+    }
+
+    // --- Original Script Logic (Mobile Menu, etc.) ---
     // 1. Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -19,6 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (menuIcon) {
                 menuIcon.textContent = isExpanded ? 'menu' : 'close';
             }
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                if (menuIcon) {
+                    menuIcon.textContent = 'menu';
+                }
+            });
         });
     }
 

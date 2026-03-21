@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark" lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -63,22 +63,26 @@
     <header
         class="fixed top-0 w-full z-50 bg-[#121412] backdrop-blur-md bg-opacity-80 border-b border-[#dac769]/10 py-6 px-8 transition-all duration-500 ease-in-out">
         <nav class="flex justify-between items-center w-full max-w-7xl mx-auto">
-            <a href="#" class="flex items-center gap-8 group">
-                <img src="sientes_oficial.png" alt="SIENTES" class="h-32 md:h-40 w-auto brightness-110 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-500">
+            <a href="#" class="flex items-center gap-5 group">
+                <img src="sientes_oficial.png" alt="SIENTES" class="h-12 md:h-16 w-auto brightness-110 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-500">
             </a>
 
             <ul class="hidden md:flex items-center space-x-10">
-                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-primary border-b border-primary pb-1"
-                        href="#rituals">Rituals</a></li>
-                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-secondary hover:text-primary transition-all duration-500"
-                        href="#echoes">Echoes</a></li>
-                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-secondary hover:text-primary transition-all duration-500"
-                        href="#relics">Relics</a></li>
-                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-secondary hover:text-primary transition-all duration-500"
-                        href="#assembly">Assembly</a></li>
+                <li><a class="font-headline uppercase tracking-[0.2em] text-sm text-primary border-b border-primary pb-1"
+                        href="#echoes" data-lang-key="echoes">Ecos</a></li>
+                <li><a class="font-headline uppercase tracking-[0.2em] text-sm text-primary/70 hover:text-primary transition-all duration-500"
+                        href="#lineup" data-lang-key="lineup">Alquimistas</a></li>
+                <li><a class="font-headline uppercase tracking-[0.2em] text-sm text-primary/70 hover:text-primary transition-all duration-500"
+                        href="#rituals" data-lang-key="rituals">Rituales</a></li>
+                <li><a class="font-headline uppercase tracking-[0.2em] text-sm text-primary/70 hover:text-primary transition-all duration-500"
+                        href="#relics" data-lang-key="relics">Reliquias</a></li>
             </ul>
 
             <div class="flex items-center space-x-6 text-primary">
+                <!-- Language Selector -->
+                <button id="lang-toggle" class="font-label text-xs tracking-widest hover:text-white transition-all">
+                    ES / EN
+                </button>
                 <button class="scale-100 hover:scale-110 active:scale-95 transition-all">
                     <span class="material-symbols-outlined text-lg">share</span>
                 </button>
@@ -91,54 +95,35 @@
 
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu"
-            class="hidden fixed inset-0 top-[220px] bg-background z-40 flex-col items-center justify-center space-y-12 animate-in fade-in zoom-in duration-300">
-            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-primary" href="#rituals">Rituals</a>
-            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-secondary" href="#echoes">Echoes</a>
-            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-secondary" href="#relics">Relics</a>
-            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-secondary" href="#assembly">Assembly</a>
+            class="hidden fixed inset-0 top-[100px] bg-background z-40 flex-col items-center justify-center space-y-12 animate-in fade-in zoom-in duration-300">
+            <a class="font-headline text-3xl uppercase tracking-[0.2em] text-primary" href="#echoes" data-lang-key="echoes">Ecos</a>
+            <a class="font-headline text-3xl uppercase tracking-[0.2em] text-primary/70 hover:text-primary" href="#lineup" data-lang-key="lineup">Alquimistas</a>
+            <a class="font-headline text-3xl uppercase tracking-[0.2em] text-primary/70 hover:text-primary" href="#rituals" data-lang-key="rituals">Rituales</a>
+            <a class="font-headline text-3xl uppercase tracking-[0.2em] text-primary/70 hover:text-primary" href="#relics" data-lang-key="relics">Reliquias</a>
         </div>
     </header>
 
     <main>
         <!-- Section: Hero -->
-        <section id="rituals"
-            class="relative min-h-[90vh] md:h-screen w-full flex items-center justify-center px-6 pt-64 pb-12 overflow-hidden">
-            <div class="relative w-full h-full max-w-7xl ornamental-frame metallic-shimmer" data-reveal>
-                <div class="corner-gothic corner-tl"></div>
-                <div class="corner-gothic corner-tr"></div>
-                <div class="corner-gothic corner-bl"></div>
-                <div class="corner-gothic corner-br"></div>
-                <div class="floral-edge floral-edge-top"></div>
+        <section id="hero"
+            class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+            <div class="relative w-full h-full metallic-shimmer" data-reveal>
 
-                <div class="absolute inset-0 z-0 overflow-hidden m-2 border border-primary/10">
-                    <img class="hero-image w-full h-full object-cover filter grayscale contrast-125 brightness-50 scale-105"
-                        src="https://lh3.googleusercontent.com/aida/ADBb0ujdOh3wubx9UFMfc1zbtf8jaUlEov00Je4_7lMFfl4LnTASE7NIgsaUHtd2vYI059pdeOYyE0BzFgeRlfN--ilAJC0X5h_k5OgjKh4sQ97BaHecDxZClrq1zSRnPSxWuW7ABFs4uiPJipYGXXT4jSH1LyEXeEAye7IVKHKN1nrhAQ6Hk3DijUOR1Q4k38a_pFPIV0YC_kwSoJvEhcecoZrdhH6SFdLfFrfMV9P6Om9K6UoRkWt8UyvlnQ7HS-AD2az7h3Ged4xQjwI"
+
+
+                <div class="absolute inset-0 z-0 overflow-hidden">
+                    <img class="hero-image w-full h-full object-cover filter contrast-125 brightness-75"
+                        src="diseno/hero_banner_8k.png"
                         alt="Obsidian Ritual Hero Visual">
                     <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
                 </div>
 
                 <div
-                    class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 py-32 md:py-0">
-                    <span
-                        class="block font-label text-[10px] tracking-[0.6rem] text-primary mb-8 uppercase opacity-80">A
-                        NEW TRANSMISSION HAS BEGUN</span>
-                    <h1
-                        class="font-headline text-[15vw] md:text-[8rem] leading-none text-white tracking-tighter text-glow-gold uppercase relative">
-                        SIENTES
-                        <span
-                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-[20vw] md:text-[10rem] text-primary/10 select-none">SIENTES</span>
-                    </h1>
+                    class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
 
-                    <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-8">
-                        <button
-                            class="bg-primary text-on-primary px-12 py-5 font-label text-[10px] tracking-[0.4em] uppercase hover:bg-white transition-all duration-700 min-w-[200px]">
-                            INITIATE AUDIO
-                        </button>
-                        <button
-                            class="border border-primary/40 text-primary px-12 py-5 font-label text-[10px] tracking-[0.4em] uppercase hover:bg-primary/10 transition-all duration-700 min-w-[200px]">
-                            WITNESS VIDEO
-                        </button>
-                    </div>
+
+
+
                 </div>
             </div>
         </section>
@@ -149,13 +134,12 @@
                 <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8" data-reveal>
                     <div>
                         <span
-                            class="font-label text-[10px] tracking-[0.4em] text-primary uppercase block mb-4">DISCOGRAPHY</span>
-                        <h2 class="font-headline text-5xl md:text-8xl text-white tracking-tight uppercase leading-none">
-                            LATEST<br />ECHOES</h2>
+                            class="font-headline text-base md:text-[18px] tracking-[0.4em] text-primary uppercase block mb-4 opacity-100" data-lang-key="discography">DISCOGRAFÍA</span>
+                        <h2 class="font-headline text-5xl md:text-8xl text-white uppercase tracking-widest mb-24" data-lang-key="latest-echoes">ÚLTIMOS ECOS</h2>
                     </div>
                     <p
-                        class="font-body text-secondary/40 max-w-sm text-[10px] uppercase tracking-[0.3em] leading-relaxed italic">
-                        The alchemical process of sound.<br>Captured within the obsidian void.
+                        class="font-body text-secondary/40 max-w-sm text-[10px] uppercase tracking-[0.3em] leading-relaxed italic" data-lang-key="tagline">
+                        El proceso alquímico del sonido.<br>Capturado dentro del vacío de obsidiana.
                     </p>
                 </div>
 
@@ -175,10 +159,8 @@
                             </div>
                         </div>
                         <div class="absolute inset-0 p-12 flex flex-col justify-end z-20">
-                            <span class="font-label text-[10px] tracking-[0.5em] text-primary mb-2 uppercase">FULL
-                                LENGTH RITUAL</span>
-                            <h3 class="font-headline text-3xl md:text-4xl text-white uppercase tracking-wider mb-2">THE
-                                RITUAL OF LIGHT</h3>
+                            <span class="font-headline text-[10px] tracking-[0.5em] text-primary mb-2 uppercase" data-lang-key="featured-label">RITUAL COMPLETO</span>
+                            <h3 class="font-headline text-3xl md:text-4xl text-white uppercase tracking-wider mb-2" data-lang-key="featured-title">EL RITUAL DE LA LUZ</h3>
                         </div>
                     </div>
 
@@ -189,11 +171,10 @@
                             <div class="corner-gothic corner-tr scale-50"></div>
                             <div class="p-8 flex flex-col justify-center min-h-[250px] relative z-10">
                                 <span
-                                    class="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-2 italic">EP
-                                    RECOVERY</span>
-                                <h3 class="font-headline text-2xl text-white uppercase tracking-widest">ASCENDANCE</h3>
+                                    class="font-headline text-[10px] tracking-[0.4em] text-primary uppercase mb-2 italic" data-lang-key="ep-recovery">RECUPERACIÓN DE EP</span>
+                                <h3 class="font-headline text-2xl text-white uppercase tracking-widest">ASCENDENCIA</h3>
                                 <a class="inline-block mt-8 text-[9px] tracking-[0.5em] border-b border-primary text-primary pb-1 self-start hover:text-white hover:border-white transition-all transform hover:translate-x-2"
-                                    href="#">STREAM</a>
+                                    href="#" data-lang-key="stream">REPRODUCIR</a>
                             </div>
                         </div>
                         <div class="group relative ornamental-frame border border-primary/10" data-reveal>
@@ -201,82 +182,139 @@
                             <div class="corner-gothic corner-tr scale-50"></div>
                             <div class="p-8 flex flex-col justify-center min-h-[250px] relative z-10">
                                 <span
-                                    class="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-2 italic">SINGLE
-                                    TRANSMISSION</span>
-                                <h3 class="font-headline text-2xl text-white uppercase tracking-widest">SILVER VEINS
+                                    class="font-headline text-[10px] tracking-[0.4em] text-primary uppercase mb-2 italic" data-lang-key="single-trans">TRANSMISIÓN SENCILLA</span>
+                                <h3 class="font-headline text-2xl text-white uppercase tracking-widest">VENAS DE PLATA
                                 </h3>
                                 <a class="inline-block mt-8 text-[9px] tracking-[0.5em] border-b border-primary text-primary pb-1 self-start hover:text-white hover:border-white transition-all transform hover:translate-x-2"
-                                    href="#">STREAM</a>
+                                    href="#" data-lang-key="stream">REPRODUCIR</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+ 
+        <!-- Section: Members (Lineup) -->
+        <section id="lineup" class="py-32 md:py-48 px-6 md:px-12 bg-surface section-reveal">
+            <div class="max-w-7xl mx-auto text-center" data-reveal>
+                <span class="font-headline text-base md:text-[18px] tracking-[0.4em] text-primary uppercase block mb-4" data-lang-key="lineup-label">LINE UP</span>
+                <h2 class="font-headline text-5xl md:text-8xl text-white uppercase tracking-widest mb-32" data-lang-key="lineup-title">ALQUIMISTAS</h2>
+ 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                    <!-- Member 1 -->
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                        <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
+                        <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
+                        <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
+                        <div class="corner-gothic corner-br scale-[0.5] -bottom-8 -right-8"></div>
+                        
+                        <div class="aspect-[4/5] overflow-hidden bg-background mb-6 grayscale hover:grayscale-0 transition-all duration-1000 relative z-10">
+                             <img src="diseno/Lucas.png" alt="Lucas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]">
+                        </div>
+                        <h4 class="font-headline text-2xl text-white uppercase tracking-wider relative z-10">LUCAS</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-vocals">Voz Líder / Compositor</p>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                        <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
+                        <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
+                        <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
+                        <div class="corner-gothic corner-br scale-[0.5] -bottom-8 -right-8"></div>
 
-        <!-- Section: World Ritual (Tour) -->
-        <section id="assembly" class="py-32 md:py-48 px-6 md:px-12 bg-surface-container border-y border-primary/10">
+                        <div class="aspect-[4/5] overflow-hidden bg-background mb-6 grayscale hover:grayscale-0 transition-all duration-1000 relative z-10">
+                             <img src="diseno/Nico.png" alt="Nico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]">
+                        </div>
+                        <h4 class="font-headline text-2xl text-white uppercase tracking-wider relative z-10">NICO</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-guitar">Bajo / Productor</p>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                        <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
+                        <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
+                        <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
+                        <div class="corner-gothic corner-br scale-[0.5] -bottom-8 -right-8"></div>
+
+                        <div class="aspect-[4/5] overflow-hidden bg-background mb-6 grayscale hover:grayscale-0 transition-all duration-1000 relative z-10">
+                             <img src="diseno/Cata.png" alt="Cata" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]">
+                        </div>
+                        <h4 class="font-headline text-2xl text-white uppercase tracking-wider relative z-10">CATA</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-keys">Voz / Coros</p>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                        <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
+                        <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
+                        <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
+                        <div class="corner-gothic corner-br scale-[0.5] -bottom-8 -right-8"></div>
+
+                        <div class="aspect-[4/5] overflow-hidden bg-background mb-6 grayscale hover:grayscale-0 transition-all duration-1000 relative z-10">
+                             <img src="diseno/Eze.png" alt="Eze" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]">
+                        </div>
+                        <h4 class="font-headline text-2xl text-white uppercase tracking-wider relative z-10">EZE</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-drums">1° Guitarra</p>
+                    </div>
+                    <!-- Member 5 -->
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                        <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
+                        <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
+                        <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
+                        <div class="corner-gothic corner-br scale-[0.5] -bottom-8 -right-8"></div>
+
+                        <div class="aspect-[4/5] overflow-hidden bg-background mb-6 grayscale hover:grayscale-0 transition-all duration-1000 relative z-10">
+                             <img src="diseno/Guille.png" alt="Guille" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]">
+                        </div>
+                        <h4 class="font-headline text-2xl text-white uppercase tracking-wider relative z-10">GUILLE</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-bass">2° Guitarra</p>
+                    </div>
+                    <!-- Member 6 -->
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                        <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
+                        <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
+                        <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
+                        <div class="corner-gothic corner-br scale-[0.5] -bottom-8 -right-8"></div>
+
+                        <div class="aspect-[4/5] overflow-hidden bg-background mb-6 grayscale hover:grayscale-0 transition-all duration-1000 relative z-10">
+                             <img src="diseno/Lucho.png" alt="Lucho" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]">
+                        </div>
+                        <h4 class="font-headline text-2xl text-white uppercase tracking-wider relative z-10">LUCHO</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-rituals">Batería</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Rituales (Tour) -->
+        <section id="rituals" class="py-32 md:py-48 px-6 md:px-12 bg-surface-container border-y border-primary/10 section-reveal">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-24" data-reveal>
-                    <h2 class="font-headline text-4xl md:text-6xl text-white uppercase tracking-[0.6em]">WORLD RITUAL
-                        2024</h2>
-                    <div class="w-12 h-[1px] bg-primary mx-auto mt-12 mb-4"></div>
-                    <span class="font-label text-[10px] tracking-[0.5em] text-primary/40 uppercase">UPCOMING
-                        PHASES</span>
+                    <span class="font-headline text-base md:text-[18px] tracking-[0.4em] text-primary uppercase block mb-4" data-lang-key="upcoming">PRÓXIMAS FASES</span>
+                    <h2 class="font-headline text-5xl md:text-8xl text-white uppercase tracking-widest mb-24" data-lang-key="world-ritual">RITUALES 2026</h2>
                 </div>
 
-                <div class="divide-y divide-primary/5">
-                    <div class="group flex flex-col md:flex-row items-center justify-between py-12 px-6 hover:bg-primary/5 transition-all duration-700"
+                <div class="space-y-6">
+                    <!-- Tour Date 1 -->
+                    <div class="group flex flex-col md:flex-row items-center justify-between p-8 border border-white/5 hover:border-primary/30 transition-all duration-700 bg-surface/50 relative overflow-hidden"
                         data-reveal>
-                        <div class="flex items-center gap-16 mb-8 md:mb-0">
-                            <span
-                                class="font-headline text-3xl text-primary group-hover:scale-110 transition-transform duration-700">XIV.X</span>
-                            <div>
-                                <h4 class="font-headline text-xl md:text-2xl text-white tracking-widest uppercase">
-                                    LONDON</h4>
-                                <p class="font-label text-[10px] text-secondary/40 tracking-[0.3em] uppercase mt-1">THE
-                                    O2 ACADEMY</p>
-                            </div>
+                        <div class="flex-1 text-center md:text-left mb-6 md:mb-0">
+                            <span class="font-label text-xs text-primary/60 tracking-widest block mb-2">OCT 12</span>
+                            <h3 class="font-headline text-xl text-white tracking-widest">BUENOS AIRES, AR</h3>
+                            <p class="font-headline text-[8px] text-primary/40 uppercase tracking-[0.3em] mt-1">Palacio De Cristal</p>
                         </div>
-                        <button
-                            class="border border-primary/20 px-12 py-4 font-label text-[10px] tracking-[0.4em] uppercase text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">RESERVE</button>
+                        <button class="px-10 py-4 border border-primary text-primary font-headline text-[10px] tracking-[0.4em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 whitespace-nowrap" data-lang-key="reserve">RESERVAR</button>
                     </div>
-                    <div class="group flex flex-col md:flex-row items-center justify-between py-12 px-6 hover:bg-primary/5 transition-all duration-700"
-                        data-reveal>
-                        <div class="flex items-center gap-16 mb-8 md:mb-0">
-                            <span class="font-headline text-3xl text-primary">XVIII.X</span>
-                            <div>
-                                <h4 class="font-headline text-xl md:text-2xl text-white tracking-widest uppercase">
-                                    BERLIN</h4>
-                                <p class="font-label text-[10px] text-secondary/40 tracking-[0.3em] uppercase mt-1">
-                                    COLUMBIAHALLE</p>
-                            </div>
-                        </div>
-                        <button
-                            class="border border-primary/20 px-12 py-4 font-label text-[10px] tracking-[0.4em] uppercase text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">RESERVE</button>
-                    </div>
-                    <div class="group flex flex-col md:flex-row items-center justify-between py-12 px-6 opacity-30 cursor-not-allowed"
-                        data-reveal>
-                        <div class="flex items-center gap-16 mb-8 md:mb-0">
-                            <span class="font-headline text-3xl text-secondary">XXII.X</span>
-                            <div>
-                                <h4 class="font-headline text-xl md:text-2xl text-white tracking-widest uppercase">PARIS
-                                </h4>
-                                <p class="font-label text-[10px] text-secondary/60 tracking-[0.3em] uppercase mt-1">LE
-                                    ZENITH</p>
-                            </div>
-                        </div>
-                        <span
-                            class="font-label text-[10px] tracking-[0.4em] uppercase text-secondary border border-secondary/20 px-12 py-4">EXTINGUISHED</span>
-                    </div>
-                </div>
 
-                <div class="text-center mt-24">
-                    <a class="font-label text-[10px] tracking-[0.6rem] uppercase text-primary hover:text-white transition-all flex items-center justify-center gap-4"
-                        href="#">
-                        <span>VIEW ALL PHASES</span>
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
+                    <!-- Tour Date 2 -->
+                    <div class="group flex flex-col md:flex-row items-center justify-between p-8 border border-white/5 hover:border-primary/30 transition-all duration-700 bg-surface/50 relative overflow-hidden"
+                        data-reveal>
+                        <div class="flex-1 text-center md:text-left mb-6 md:mb-0">
+                            <span class="font-label text-xs text-primary/60 tracking-widest block mb-2">OCT 24</span>
+                            <h3 class="font-headline text-xl text-white tracking-widest">SANTIAGO, CL</h3>
+                            <p class="font-headline text-[8px] text-primary/40 uppercase tracking-[0.3em] mt-1">Catedral Del Vacío</p>
+                        </div>
+                        <button class="px-10 py-4 border border-white/20 text-white/40 font-headline text-[10px] tracking-[0.4em] uppercase cursor-not-allowed whitespace-nowrap" data-lang-key="extinguished">AGOTADO</button>
+                    </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -286,8 +324,8 @@
             <div class="max-w-7xl mx-auto">
                 <div class="mb-32 text-center" data-reveal>
                     <span
-                        class="font-label text-[10px] tracking-[0.6em] text-primary uppercase block mb-4">ARTIFACTS</span>
-                    <h2 class="font-headline text-6xl md:text-8xl text-white uppercase tracking-widest">THE ARMORY</h2>
+                        class="font-headline text-base md:text-[18px] tracking-[0.4em] text-primary uppercase block mb-4" data-lang-key="artifacts">ARTEFACTOS</span>
+                    <h2 class="font-headline text-5xl md:text-8xl text-white uppercase tracking-widest mb-24" data-lang-key="armory">RELIQUIAS</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
@@ -303,15 +341,15 @@
                                 <div
                                     class="absolute inset-x-0 bottom-0 p-4 bg-background/80 backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                                     <button
-                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase">COLLECT</button>
+                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase" data-lang-key="collect">COLECCIONAR</button>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-between items-start px-2">
                             <div>
-                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">RITUAL TEE</h4>
-                                <p class="font-label text-[9px] text-primary tracking-[0.3em] uppercase mt-2">CHARCOAL /
-                                    GOLD</p>
+                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">CAMISETA RITUAL</h4>
+                                <p class="font-headline text-[9px] text-primary tracking-[0.3em] uppercase mt-2">CARBÓN /
+                                    ORO</p>
                             </div>
                             <span class="font-headline text-xl text-primary opacity-60">$45</span>
                         </div>
@@ -328,15 +366,15 @@
                                 <div
                                     class="absolute inset-x-0 bottom-0 p-4 bg-background/80 backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                                     <button
-                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase">COLLECT</button>
+                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase" data-lang-key="collect">COLECCIONAR</button>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-between items-start px-2">
                             <div>
-                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">SIGIL HOODIE</h4>
-                                <p class="font-label text-[9px] text-primary tracking-[0.3em] uppercase mt-2">
-                                    HEAVYWEIGHT WOVEN</p>
+                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">SUDADERA SIGILO</h4>
+                                <p class="font-headline text-[9px] text-primary tracking-[0.3em] uppercase mt-2">
+                                    TEJIDO PESADO</p>
                             </div>
                             <span class="font-headline text-xl text-primary opacity-60">$85</span>
                         </div>
@@ -353,16 +391,15 @@
                                 <div
                                     class="absolute inset-x-0 bottom-0 p-4 bg-background/80 backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                                     <button
-                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase">COLLECT</button>
+                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase" data-lang-key="collect">COLECCIONAR</button>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-between items-start px-2">
                             <div>
-                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">SIENTES VINYL
+                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">VINILO SIENTES
                                 </h4>
-                                <p class="font-label text-[9px] text-primary tracking-[0.3em] uppercase mt-2">MARBLE
-                                    EDITION</p>
+                                <p class="font-headline text-[9px] text-primary tracking-[0.3em] uppercase mt-2">EDICIÓN MÁRMOL</p>
                             </div>
                             <span class="font-headline text-xl text-primary opacity-60">$35</span>
                         </div>
@@ -371,8 +408,8 @@
 
                 <div class="mt-40 text-center" data-reveal>
                     <button
-                        class="border border-primary/40 px-24 py-8 font-label text-[10px] tracking-[0.8rem] uppercase text-primary hover:bg-primary hover:text-on-primary transition-all duration-[1000ms]">
-                        ACCESS THE VAULT
+                        class="border border-primary/40 px-24 py-8 font-label text-[10px] tracking-[0.8rem] uppercase text-primary hover:bg-primary hover:text-on-primary transition-all duration-[1000ms]" data-lang-key="vault">
+                        ACCEDER A LA CRIPTA
                     </button>
                 </div>
             </div>
@@ -391,26 +428,25 @@
                     class="inline-block w-12 h-12 mb-12 border border-primary/20 rotate-45 flex items-center justify-center">
                     <span class="material-symbols-outlined text-primary -rotate-45 text-sm">notifications</span>
                 </div>
-                <h2 class="font-headline text-4xl md:text-5xl text-white mb-8 tracking-[0.6em] uppercase">JOIN THE
-                    COLLECTIVE</h2>
+                <h2 class="font-headline text-4xl md:text-5xl text-white mb-8 tracking-[0.6em] uppercase" data-lang-key="join">ÚNETE AL COLECTIVO</h2>
                 <p
-                    class="font-body text-secondary/40 mb-20 text-[10px] leading-relaxed tracking-[0.4em] uppercase italic italic">
-                    RECEIVE TRANSMISSIONS FROM THE VOID.
+                    class="font-headline text-secondary/40 mb-20 text-[10px] leading-relaxed tracking-[0.4em] uppercase italic" data-lang-key="receive">
+                    RECIBE TRANSMISIONES DESDE EL VACÍO.
                 </p>
 
                 <form class="flex flex-col gap-16">
                     <div class="relative group">
                         <input
                             class="w-full bg-transparent border-0 border-b border-primary/20 py-6 px-0 text-white placeholder:text-primary/20 focus:ring-0 focus:border-primary transition-all duration-700 font-label text-[11px] tracking-[0.5em] uppercase text-center"
-                            placeholder="ENTER EMAIL ADDRESS" type="email" required />
+                            placeholder="INGRESAR CORREO ELECTRÓNICO" type="email" required />
                         <div
                             class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-1000">
                         </div>
                     </div>
                     <button
                         class="bg-primary text-on-primary py-6 font-label text-[11px] tracking-[0.6em] uppercase hover:bg-white hover:tracking-[0.8em] transition-all duration-700"
-                        type="submit">
-                        SUBSCRIBE
+                        type="submit" data-lang-key="subscribe">
+                        SUSCRIBIRSE
                     </button>
                 </form>
             </div>
@@ -420,19 +456,19 @@
     <!-- Footer -->
     <footer class="bg-[#121412] border-t border-secondary/5">
         <div class="flex flex-col items-center justify-center w-full py-24 px-8 gap-12">
-            <div class="flex flex-col items-center gap-12 group">
-                <img src="sientes_oficial.png" alt="SIENTES" class="h-64 md:h-80 w-auto brightness-110 group-hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all duration-500">
+            <div class="flex flex-col items-center gap-8 group">
+                <img src="sientes_oficial.png" alt="SIENTES" class="h-16 md:h-20 w-auto brightness-110 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-500">
             </div>
 
             <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
                 <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
-                    href="#">Privacy</a>
+                    href="#" data-lang-key="privacy">Privacidad</a>
                 <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
-                    href="#">Terms</a>
+                    href="#" data-lang-key="terms">Términos</a>
                 <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
-                    href="#">Press</a>
+                    href="#" data-lang-key="press">Prensa</a>
                 <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
-                    href="#">Contact</a>
+                    href="#" data-lang-key="contact">Contacto</a>
             </div>
 
             <div class="flex items-center space-x-10 text-secondary/20">
@@ -444,9 +480,9 @@
                     class="material-symbols-outlined hover:text-primary transition-all cursor-pointer text-lg">public</span>
             </div>
 
-            <div class="font-label text-[9px] tracking-[0.3em] uppercase text-secondary/30">
-                © MMXXIV SIENTES. ALL RIGHTS RESERVED. <br>
-                <span class="block mt-2 opacity-50">DESIGNED UNDER THE LAWS OF THE VOID</span>
+            <div class="font-label text-[9px] tracking-[0.3em] uppercase text-secondary/30" data-lang-key="rights">
+                © MMXXIV SIENTES. TODOS LOS DERECHOS RESERVADOS. <br>
+                <span class="block mt-2 opacity-50" data-lang-key="laws">DISEÑADO BAJO LAS LEYES DEL VACÍO</span>
             </div>
         </div>
     </footer>
