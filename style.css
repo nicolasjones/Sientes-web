@@ -12,11 +12,11 @@ html {
     --color-background: #121412;
     --color-surface: #121412;
     --color-surface-container: #1a1c1a;
-    --color-primary: #dac769;
+    --color-primary: #b3a04a;
     --color-on-primary: #121412;
     --color-on-surface: #c5c6ca;
     --color-secondary: #c5c6ca;
-    --color-outline: rgba(218, 199, 105, 0.2);
+    --color-outline: rgba(179, 160, 74, 0.2);
 }
 
 /* Album Selector Styles */
