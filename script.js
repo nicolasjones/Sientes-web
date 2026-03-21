@@ -102,8 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.textContent = translations[lang][key];
             }
         });
-        document.documentElement.lang = lang;
-        langToggleBtn.textContent = lang === 'es' ? 'ES / EN' : 'EN / ES';
+        langToggleBtn.textContent = lang === 'es' ? 'EN' : 'ES';
     };
 
     if (langToggleBtn) {
@@ -113,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Original Script Logic (Mobile Menu, etc.) ---
     // 1. Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -226,5 +224,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 3000);
             }, 1000);
         });
+    }
+
+    // --- Discography Logic ---
+    const albumData = {
+        'sientes': {
+            title: 'SIENTES (EP)',
+            spotifyId: '6iQVUF7K76K8jovTYj1R7g',
+            tracks: [
+                '1. Paradigma',
+                '2. Ozono',
+                '3. Vision Estelar',
+                '4. Electrico Sueño',
+                '5. Electric killer'
+            ]
+        },
+        'pronoia': {
+            title: 'PRONOIA (ALBUM)',
+            spotifyId: '3Wx9Frd0CNl4D521NG9Yxi',
+            tracks: [
+                '1. Requiem',
+                '2. In your dreams',
+                '3. El fin sin fin',
+                '4. Anatomico',
+                '5. Destino',
+                '6. Sientes',
+                '7. Ve'
+            ]
+        }
+    };
+
+    window.switchAlbum = function(albumKey) {
+        const data = albumData[albumKey];
+        if (!data) return;
+
+        // Update UI
+        const titleEl = document.getElementById('display-title');
+        if (titleEl) titleEl.textContent = data.title;
+        
+        // Update Tracklist
+        const list = document.getElementById('tracklist');
+        if (list) {
+            list.innerHTML = data.tracks.map(track => `<li class="hover:text-primary transition-colors cursor-default">${track}</li>`).join('');
+        }
+        
+        // Update Spotify Iframe
+        const iframe = document.getElementById('spotify-iframe');
+        if (iframe) {
+            iframe.src = `https://open.spotify.com/embed/album/${data.spotifyId}?utm_source=generator&theme=0`;
+        }
+
+        // Update Active States
+        document.querySelectorAll('.album-card').forEach(card => card.classList.remove('active-album'));
+        const activeCard = document.getElementById(`album-${albumKey}`);
+        if(activeCard) activeCard.classList.add('active-album');
+    };
+
+    // Initialize default album
+    if(document.getElementById('tracklist')) {
+        switchAlbum('sientes');
     }
 });
