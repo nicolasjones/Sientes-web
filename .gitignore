@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Design Assets
+*.psd
+*.ai
+# diseno/screen.png (uncomment if you want to keep repo light)

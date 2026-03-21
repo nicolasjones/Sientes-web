@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SIENTES | OBSIDIAN RITUAL</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Witness the alchemical ritual of SIENTES. Discover latest echoes, ritual artifacts, and upcoming world ritual phases.">
+    <meta property="og:title" content="SIENTES | OBSIDIAN RITUAL">
+    <meta property="og:description" content="The Alchemical Manuscript: a cinematic experience by SIENTES.">
+
+    <!-- Local Styling & Scripts -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Typography & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@200;300;400;700&family=Work+Sans:wght@200;400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#dac769",
+                        "on-primary": "#121412",
+                        "surface": "#121412",
+                        "on-surface": "#c5c6ca",
+                        "surface-container": "#1a1c1a",
+                        "outline": "#dac769",
+                        "background": "#0a0b0a",
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Noto Serif", "serif"],
+                        "label": ["Work Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+
+    <!-- Header & Navigation -->
+    <header
+        class="fixed top-0 w-full z-50 bg-[#121412] backdrop-blur-md bg-opacity-80 border-b border-[#dac769]/10 py-6 px-8 transition-all duration-500 ease-in-out">
+        <nav class="flex justify-between items-center w-full max-w-7xl mx-auto">
+            <a href="#" class="flex items-center gap-8 group">
+                <img src="sientes_oficial.png" alt="SIENTES" class="h-32 md:h-40 w-auto brightness-110 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-500">
+            </a>
+
+            <ul class="hidden md:flex items-center space-x-10">
+                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-primary border-b border-primary pb-1"
+                        href="#rituals">Rituals</a></li>
+                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-secondary hover:text-primary transition-all duration-500"
+                        href="#echoes">Echoes</a></li>
+                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-secondary hover:text-primary transition-all duration-500"
+                        href="#relics">Relics</a></li>
+                <li><a class="font-headline uppercase tracking-[0.2em] text-[10px] text-secondary hover:text-primary transition-all duration-500"
+                        href="#assembly">Assembly</a></li>
+            </ul>
+
+            <div class="flex items-center space-x-6 text-primary">
+                <button class="scale-100 hover:scale-110 active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-lg">share</span>
+                </button>
+                <button id="menu-btn" class="scale-100 hover:scale-110 active:scale-95 transition-all"
+                    aria-expanded="false" aria-label="Menu">
+                    <span class="material-symbols-outlined text-lg">menu</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 top-[220px] bg-background z-40 flex-col items-center justify-center space-y-12 animate-in fade-in zoom-in duration-300">
+            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-primary" href="#rituals">Rituals</a>
+            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-secondary" href="#echoes">Echoes</a>
+            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-secondary" href="#relics">Relics</a>
+            <a class="font-headline text-2xl uppercase tracking-[0.2em] text-secondary" href="#assembly">Assembly</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section: Hero -->
+        <section id="rituals"
+            class="relative min-h-[90vh] md:h-screen w-full flex items-center justify-center px-6 pt-64 pb-12 overflow-hidden">
+            <div class="relative w-full h-full max-w-7xl ornamental-frame metallic-shimmer" data-reveal>
+                <div class="corner-gothic corner-tl"></div>
+                <div class="corner-gothic corner-tr"></div>
+                <div class="corner-gothic corner-bl"></div>
+                <div class="corner-gothic corner-br"></div>
+                <div class="floral-edge floral-edge-top"></div>
+
+                <div class="absolute inset-0 z-0 overflow-hidden m-2 border border-primary/10">
+                    <img class="hero-image w-full h-full object-cover filter grayscale contrast-125 brightness-50 scale-105"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0ujdOh3wubx9UFMfc1zbtf8jaUlEov00Je4_7lMFfl4LnTASE7NIgsaUHtd2vYI059pdeOYyE0BzFgeRlfN--ilAJC0X5h_k5OgjKh4sQ97BaHecDxZClrq1zSRnPSxWuW7ABFs4uiPJipYGXXT4jSH1LyEXeEAye7IVKHKN1nrhAQ6Hk3DijUOR1Q4k38a_pFPIV0YC_kwSoJvEhcecoZrdhH6SFdLfFrfMV9P6Om9K6UoRkWt8UyvlnQ7HS-AD2az7h3Ged4xQjwI"
+                        alt="Obsidian Ritual Hero Visual">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                </div>
+
+                <div
+                    class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 py-32 md:py-0">
+                    <span
+                        class="block font-label text-[10px] tracking-[0.6rem] text-primary mb-8 uppercase opacity-80">A
+                        NEW TRANSMISSION HAS BEGUN</span>
+                    <h1
+                        class="font-headline text-[15vw] md:text-[8rem] leading-none text-white tracking-tighter text-glow-gold uppercase relative">
+                        SIENTES
+                        <span
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-[20vw] md:text-[10rem] text-primary/10 select-none">SIENTES</span>
+                    </h1>
+
+                    <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-8">
+                        <button
+                            class="bg-primary text-on-primary px-12 py-5 font-label text-[10px] tracking-[0.4em] uppercase hover:bg-white transition-all duration-700 min-w-[200px]">
+                            INITIATE AUDIO
+                        </button>
+                        <button
+                            class="border border-primary/40 text-primary px-12 py-5 font-label text-[10px] tracking-[0.4em] uppercase hover:bg-primary/10 transition-all duration-700 min-w-[200px]">
+                            WITNESS VIDEO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Latest Echoes (Discography) -->
+        <section id="echoes" class="py-32 md:py-48 px-6 md:px-12 bg-background section-reveal">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8" data-reveal>
+                    <div>
+                        <span
+                            class="font-label text-[10px] tracking-[0.4em] text-primary uppercase block mb-4">DISCOGRAPHY</span>
+                        <h2 class="font-headline text-5xl md:text-8xl text-white tracking-tight uppercase leading-none">
+                            LATEST<br />ECHOES</h2>
+                    </div>
+                    <p
+                        class="font-body text-secondary/40 max-w-sm text-[10px] uppercase tracking-[0.3em] leading-relaxed italic">
+                        The alchemical process of sound.<br>Captured within the obsidian void.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <!-- Featured Album -->
+                    <div class="md:col-span-8 group relative ornamental-frame border border-primary/20 p-2" data-reveal>
+                        <div class="corner-gothic corner-tl scale-75"></div>
+                        <div class="corner-gothic corner-tr scale-75"></div>
+                        <div class="corner-gothic corner-bl scale-75"></div>
+                        <div class="corner-gothic corner-br scale-75"></div>
+                        <div class="aspect-video overflow-hidden relative">
+                            <img class="w-full h-full object-cover opacity-50 contrast-125 grayscale group-hover:scale-105 transition-transform duration-[2000ms]"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmt57GojNZF8wBimTmgsWcsvhP2XpUs9vAvIg-AjcNeU476vqgL_PE20le_PGPgNlSnafQvg3onPVk3IJIaYh6YuX2K2xH9l3_CCzxNtqnZJuo7L1o8JGcS1LBMLymE6brVVbqMqvI6ippnxrneTpiyFc7Ub16rDordzEHLu1Sh5Gd0BdN1jOAnKC6zVTajE9GxBSPDPw1fmWUGGC3bPK65BFMc6YG1SfFwTZJUkmiEAzRUnbcn3HXX5IU_mbqUUGeUOy1bu-l0WYF"
+                                alt="The Ritual of Light">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80">
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 p-12 flex flex-col justify-end z-20">
+                            <span class="font-label text-[10px] tracking-[0.5em] text-primary mb-2 uppercase">FULL
+                                LENGTH RITUAL</span>
+                            <h3 class="font-headline text-3xl md:text-4xl text-white uppercase tracking-wider mb-2">THE
+                                RITUAL OF LIGHT</h3>
+                        </div>
+                    </div>
+
+                    <!-- Sub Releases -->
+                    <div class="md:col-span-4 flex flex-col gap-12">
+                        <div class="group relative ornamental-frame border border-primary/10" data-reveal>
+                            <div class="corner-gothic corner-tl scale-50"></div>
+                            <div class="corner-gothic corner-tr scale-50"></div>
+                            <div class="p-8 flex flex-col justify-center min-h-[250px] relative z-10">
+                                <span
+                                    class="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-2 italic">EP
+                                    RECOVERY</span>
+                                <h3 class="font-headline text-2xl text-white uppercase tracking-widest">ASCENDANCE</h3>
+                                <a class="inline-block mt-8 text-[9px] tracking-[0.5em] border-b border-primary text-primary pb-1 self-start hover:text-white hover:border-white transition-all transform hover:translate-x-2"
+                                    href="#">STREAM</a>
+                            </div>
+                        </div>
+                        <div class="group relative ornamental-frame border border-primary/10" data-reveal>
+                            <div class="corner-gothic corner-tl scale-50"></div>
+                            <div class="corner-gothic corner-tr scale-50"></div>
+                            <div class="p-8 flex flex-col justify-center min-h-[250px] relative z-10">
+                                <span
+                                    class="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-2 italic">SINGLE
+                                    TRANSMISSION</span>
+                                <h3 class="font-headline text-2xl text-white uppercase tracking-widest">SILVER VEINS
+                                </h3>
+                                <a class="inline-block mt-8 text-[9px] tracking-[0.5em] border-b border-primary text-primary pb-1 self-start hover:text-white hover:border-white transition-all transform hover:translate-x-2"
+                                    href="#">STREAM</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: World Ritual (Tour) -->
+        <section id="assembly" class="py-32 md:py-48 px-6 md:px-12 bg-surface-container border-y border-primary/10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-24" data-reveal>
+                    <h2 class="font-headline text-4xl md:text-6xl text-white uppercase tracking-[0.6em]">WORLD RITUAL
+                        2024</h2>
+                    <div class="w-12 h-[1px] bg-primary mx-auto mt-12 mb-4"></div>
+                    <span class="font-label text-[10px] tracking-[0.5em] text-primary/40 uppercase">UPCOMING
+                        PHASES</span>
+                </div>
+
+                <div class="divide-y divide-primary/5">
+                    <div class="group flex flex-col md:flex-row items-center justify-between py-12 px-6 hover:bg-primary/5 transition-all duration-700"
+                        data-reveal>
+                        <div class="flex items-center gap-16 mb-8 md:mb-0">
+                            <span
+                                class="font-headline text-3xl text-primary group-hover:scale-110 transition-transform duration-700">XIV.X</span>
+                            <div>
+                                <h4 class="font-headline text-xl md:text-2xl text-white tracking-widest uppercase">
+                                    LONDON</h4>
+                                <p class="font-label text-[10px] text-secondary/40 tracking-[0.3em] uppercase mt-1">THE
+                                    O2 ACADEMY</p>
+                            </div>
+                        </div>
+                        <button
+                            class="border border-primary/20 px-12 py-4 font-label text-[10px] tracking-[0.4em] uppercase text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">RESERVE</button>
+                    </div>
+                    <div class="group flex flex-col md:flex-row items-center justify-between py-12 px-6 hover:bg-primary/5 transition-all duration-700"
+                        data-reveal>
+                        <div class="flex items-center gap-16 mb-8 md:mb-0">
+                            <span class="font-headline text-3xl text-primary">XVIII.X</span>
+                            <div>
+                                <h4 class="font-headline text-xl md:text-2xl text-white tracking-widest uppercase">
+                                    BERLIN</h4>
+                                <p class="font-label text-[10px] text-secondary/40 tracking-[0.3em] uppercase mt-1">
+                                    COLUMBIAHALLE</p>
+                            </div>
+                        </div>
+                        <button
+                            class="border border-primary/20 px-12 py-4 font-label text-[10px] tracking-[0.4em] uppercase text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">RESERVE</button>
+                    </div>
+                    <div class="group flex flex-col md:flex-row items-center justify-between py-12 px-6 opacity-30 cursor-not-allowed"
+                        data-reveal>
+                        <div class="flex items-center gap-16 mb-8 md:mb-0">
+                            <span class="font-headline text-3xl text-secondary">XXII.X</span>
+                            <div>
+                                <h4 class="font-headline text-xl md:text-2xl text-white tracking-widest uppercase">PARIS
+                                </h4>
+                                <p class="font-label text-[10px] text-secondary/60 tracking-[0.3em] uppercase mt-1">LE
+                                    ZENITH</p>
+                            </div>
+                        </div>
+                        <span
+                            class="font-label text-[10px] tracking-[0.4em] uppercase text-secondary border border-secondary/20 px-12 py-4">EXTINGUISHED</span>
+                    </div>
+                </div>
+
+                <div class="text-center mt-24">
+                    <a class="font-label text-[10px] tracking-[0.6rem] uppercase text-primary hover:text-white transition-all flex items-center justify-center gap-4"
+                        href="#">
+                        <span>VIEW ALL PHASES</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: The Armory (Merch) -->
+        <section id="relics" class="py-32 md:py-48 px-6 md:px-12 bg-background">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-32 text-center" data-reveal>
+                    <span
+                        class="font-label text-[10px] tracking-[0.6em] text-primary uppercase block mb-4">ARTIFACTS</span>
+                    <h2 class="font-headline text-6xl md:text-8xl text-white uppercase tracking-widest">THE ARMORY</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+                    <!-- Product 1 -->
+                    <div class="group" data-reveal>
+                        <div class="ornamental-frame mb-10 border border-primary/10 overflow-hidden">
+                            <div class="corner-gothic corner-tl scale-75"></div>
+                            <div class="corner-gothic corner-tr scale-75"></div>
+                            <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                                <img class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTJrn8pHICsh3Z_zyDgjPvFA35jy6lBpcNUN0OpEgYbPV1BlEi-M-Vs4GdG0VIkXX3-jRziJhgmxlpkVvApRmawzsPGlWlbEaCYpjZCRkuxnwm23o7n0PsRKXQweQYE7H60l4f4JxxA_PPmnk1N2_8AftJd776ft4ynDttjeNRQ_67rB98bCMqp8nrUqHCuqwwZV410YhB2ZpIMemPu5pmoMGmqmxvQzpiOSGG2JkgZaNWESizx0mgGneKrdUwY6eNVIo1KIGc9vYS"
+                                    alt="Ritual Tee">
+                                <div
+                                    class="absolute inset-x-0 bottom-0 p-4 bg-background/80 backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase">COLLECT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start px-2">
+                            <div>
+                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">RITUAL TEE</h4>
+                                <p class="font-label text-[9px] text-primary tracking-[0.3em] uppercase mt-2">CHARCOAL /
+                                    GOLD</p>
+                            </div>
+                            <span class="font-headline text-xl text-primary opacity-60">$45</span>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="group" data-reveal>
+                        <div class="ornamental-frame mb-10 border border-primary/10 overflow-hidden">
+                            <div class="corner-gothic corner-tl scale-75"></div>
+                            <div class="corner-gothic corner-tr scale-75"></div>
+                            <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                                <img class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE0qdywX33I6ZwBedqbSBS9UteE0uvInLPZ1NlLIaQtW_Gyo0npbFIIoiKg_-n1GcwWPJCtO_4fTgLYd7VIeE3G2Z8T--PYycT3AI994enW89TehEipb_nCAaWjdMe4tsPabrhQZ4PgL_GAzUrWiQkB7KzeL-bB2ahT528d0skRWraa64C-ldHgR23ixrCKB-WwwIDf0Wggyd-ZtP-JFW4MW1bYbmgh7b_MvrSL3bGAKJAICElw1msop_DD3ANukkjGGsmWPVhy77b"
+                                    alt="Sigil Hoodie">
+                                <div
+                                    class="absolute inset-x-0 bottom-0 p-4 bg-background/80 backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase">COLLECT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start px-2">
+                            <div>
+                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">SIGIL HOODIE</h4>
+                                <p class="font-label text-[9px] text-primary tracking-[0.3em] uppercase mt-2">
+                                    HEAVYWEIGHT WOVEN</p>
+                            </div>
+                            <span class="font-headline text-xl text-primary opacity-60">$85</span>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="group" data-reveal>
+                        <div class="ornamental-frame mb-10 border border-primary/10 overflow-hidden">
+                            <div class="corner-gothic corner-tl scale-75"></div>
+                            <div class="corner-gothic corner-tr scale-75"></div>
+                            <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                                <img class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbK697UXC8aUBoXSFSFvN17LTtmS1Zj_NDHyLd7i4cdhkipTT5N1Zeh8QiKTFp_hIrNQb6VRp24dMPC9bPmguB-NLTLMHr4CBlnCxz0s-6p7_uziSliJ6fWMMOjM_FpXBR7XbkchC2JniX_7H_nv5HxUXug1dEI5ip1wI-B5hE774_CuqIJs_UHXB14TyEjBNeoxpKL8dWhM5IKcj7-ydPLHV-Z-2TQWa1WPk0zy8EjhYEPysBLGbwcoy-17fn1q957NqJXHnEDS3c"
+                                    alt="Sientes Vinyl">
+                                <div
+                                    class="absolute inset-x-0 bottom-0 p-4 bg-background/80 backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full py-3 bg-primary text-on-primary font-label text-[9px] tracking-widest uppercase">COLLECT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start px-2">
+                            <div>
+                                <h4 class="font-headline text-xl text-white tracking-widest uppercase">SIENTES VINYL
+                                </h4>
+                                <p class="font-label text-[9px] text-primary tracking-[0.3em] uppercase mt-2">MARBLE
+                                    EDITION</p>
+                            </div>
+                            <span class="font-headline text-xl text-primary opacity-60">$35</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-40 text-center" data-reveal>
+                    <button
+                        class="border border-primary/40 px-24 py-8 font-label text-[10px] tracking-[0.8rem] uppercase text-primary hover:bg-primary hover:text-on-primary transition-all duration-[1000ms]">
+                        ACCESS THE VAULT
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Subscription -->
+        <section class="relative py-48 bg-[#0a0b0a] overflow-hidden border-t border-primary/5">
+            <div class="absolute inset-0 opacity-10">
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent">
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-2xl mx-auto text-center px-6" data-reveal>
+                <div
+                    class="inline-block w-12 h-12 mb-12 border border-primary/20 rotate-45 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary -rotate-45 text-sm">notifications</span>
+                </div>
+                <h2 class="font-headline text-4xl md:text-5xl text-white mb-8 tracking-[0.6em] uppercase">JOIN THE
+                    COLLECTIVE</h2>
+                <p
+                    class="font-body text-secondary/40 mb-20 text-[10px] leading-relaxed tracking-[0.4em] uppercase italic italic">
+                    RECEIVE TRANSMISSIONS FROM THE VOID.
+                </p>
+
+                <form class="flex flex-col gap-16">
+                    <div class="relative group">
+                        <input
+                            class="w-full bg-transparent border-0 border-b border-primary/20 py-6 px-0 text-white placeholder:text-primary/20 focus:ring-0 focus:border-primary transition-all duration-700 font-label text-[11px] tracking-[0.5em] uppercase text-center"
+                            placeholder="ENTER EMAIL ADDRESS" type="email" required />
+                        <div
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-primary group-focus-within:w-full transition-all duration-1000">
+                        </div>
+                    </div>
+                    <button
+                        class="bg-primary text-on-primary py-6 font-label text-[11px] tracking-[0.6em] uppercase hover:bg-white hover:tracking-[0.8em] transition-all duration-700"
+                        type="submit">
+                        SUBSCRIBE
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#121412] border-t border-secondary/5">
+        <div class="flex flex-col items-center justify-center w-full py-24 px-8 gap-12">
+            <div class="flex flex-col items-center gap-12 group">
+                <img src="sientes_oficial.png" alt="SIENTES" class="h-64 md:h-80 w-auto brightness-110 group-hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all duration-500">
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
+                    href="#">Privacy</a>
+                <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
+                    href="#">Terms</a>
+                <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
+                    href="#">Press</a>
+                <a class="font-label text-[10px] tracking-[0.2em] uppercase text-secondary/40 hover:text-primary transition-all"
+                    href="#">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-10 text-secondary/20">
+                <span
+                    class="material-symbols-outlined hover:text-primary transition-all cursor-pointer text-lg">share</span>
+                <span
+                    class="material-symbols-outlined hover:text-primary transition-all cursor-pointer text-lg">audiotrack</span>
+                <span
+                    class="material-symbols-outlined hover:text-primary transition-all cursor-pointer text-lg">public</span>
+            </div>
+
+            <div class="font-label text-[9px] tracking-[0.3em] uppercase text-secondary/30">
+                © MMXXIV SIENTES. ALL RIGHTS RESERVED. <br>
+                <span class="block mt-2 opacity-50">DESIGNED UNDER THE LAWS OF THE VOID</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
