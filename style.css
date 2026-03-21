@@ -22,8 +22,10 @@
     box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.1);
 }
 
-.album-card:hover:not(.active-album) {
-    background-color: rgba(255, 255, 255, 0.02);
+/* Navigation Links */
+.nav-link-active {
+    color: var(--color-primary) !important;
+    border-bottom-color: var(--color-primary) !important;
 }
 
 * {

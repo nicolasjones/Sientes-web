@@ -280,6 +280,37 @@ document.addEventListener('DOMContentLoaded', () => {
         if(activeCard) activeCard.classList.add('active-album');
     };
 
+    // --- ScrollSpy: Update active link on scroll ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const scrollSpyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-link-active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('nav-link-active');
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '-20% 0px -60% 0px'
+    });
+
+    sections.forEach(section => scrollSpyObserver.observe(section));
+
+    // Optional: Clicking a link also forces active state (useful for instant feedback)
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(l => l.classList.remove('nav-link-active'));
+            this.classList.add('nav-link-active');
+        });
+    });
+
     // Initialize default album
     if(document.getElementById('tracklist')) {
         switchAlbum('sientes');
