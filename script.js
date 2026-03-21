@@ -201,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const btn = subscribeForm.querySelector('button');
             const input = subscribeForm.querySelector('input');
+            const email = input.value;
             const originalText = btn.textContent;
             
             btn.disabled = true;
@@ -212,13 +213,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.color = '#121412';
                 input.value = '';
                 
+                // Open Mail Client
+                const subject = encodeURIComponent('SUSCRIPCIÓN - SIÈNTES');
+                const body = encodeURIComponent('QUIERO INFO SOBRE LAS NOVEDADES DE LA BANDA\n\nCorreo del suscriptor: ' + email);
+                window.location.href = `mailto:SIENTES.MUSICA@GMAIL.COM?subject=${subject}&body=${body}`;
+
                 setTimeout(() => {
                     btn.disabled = false;
                     btn.textContent = originalText;
                     btn.style.backgroundColor = '';
                     btn.style.color = '';
                 }, 3000);
-            }, 1500);
+            }, 1000);
         });
     }
 });
