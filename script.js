@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         'es': {
-            'rituals': 'RITUALES',
-            'echoes': 'ECOS',
+            'rituals': 'PRÓXIMAS FECHAS',
+            'echoes': 'DISCOGRAFÍA',
             'relics': 'MERCHANDISING',
             'assembly': 'ASAMBLEA',
             'lineup': 'MÚSICOS',
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'laws': 'DISEÑADO BAJO LAS LEYES DEL VACÍO'
         },
         'en': {
-            'rituals': 'RITUALS',
-            'echoes': 'ECHOES',
+            'rituals': 'UPCOMING DATES',
+            'echoes': 'DISCOGRAPHY',
             'relics': 'MERCHANDISING',
             'assembly': 'ASSEMBLY',
             'lineup': 'MUSICIANS',
