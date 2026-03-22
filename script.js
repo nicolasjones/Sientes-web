@@ -333,6 +333,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Share Logic (WhatsApp) ---
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+            const shareText = encodeURIComponent('Conoce el ritual de SIENTES: www.sientes.musica.ar');
+            window.open(`https://api.whatsapp.com/send?text=${shareText}`, '_blank');
+        });
+    }
+
     // Initialize default album
     if(document.getElementById('tracklist')) {
         switchAlbum('sientes');
