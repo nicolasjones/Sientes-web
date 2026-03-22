@@ -26,6 +26,17 @@ html {
     box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.1);
 }
 
+/* Merch Panning Animation */
+@keyframes pan-sway {
+    0% { transform: scale(1.1) translateX(-2%); }
+    50% { transform: scale(1.1) translateX(2%); }
+    100% { transform: scale(1.1) translateX(-2%); }
+}
+
+.animate-pan-ritual {
+    animation: pan-sway 10s ease-in-out infinite;
+}
+
 /* Navigation Links */
 .nav-link-active {
     color: var(--color-primary) !important;
