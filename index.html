@@ -148,7 +148,7 @@
  
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
                     <!-- Member 1 -->
-                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto cursor-pointer" data-musician="lucas" data-reveal>
                         <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
                         <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
                         <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
@@ -161,7 +161,7 @@
                         <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-vocals">Voz Líder / Compositor</p>
                     </div>
                     <!-- Member 2 -->
-                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto cursor-pointer" data-musician="nico" data-reveal>
                         <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
                         <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
                         <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
@@ -174,7 +174,7 @@
                         <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-guitar">Bajo / Productor</p>
                     </div>
                     <!-- Member 3 -->
-                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto cursor-pointer" data-musician="cata" data-reveal>
                         <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
                         <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
                         <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
@@ -187,7 +187,7 @@
                         <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-keys">Voz / Coros</p>
                     </div>
                     <!-- Member 4 -->
-                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto cursor-pointer" data-musician="eze" data-reveal>
                         <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
                         <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
                         <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
@@ -200,7 +200,7 @@
                         <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-drums">1° Guitarra</p>
                     </div>
                     <!-- Member 5 -->
-                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto cursor-pointer" data-musician="guille" data-reveal>
                         <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
                         <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
                         <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
@@ -213,7 +213,7 @@
                         <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic relative z-10" data-lang-key="role-bass">2° Guitarra</p>
                     </div>
                     <!-- Member 6 -->
-                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto" data-reveal>
+                    <div class="group relative ornamental-frame border border-primary/10 p-8 transition-all duration-700 hover:border-primary/40 max-w-[252px] mx-auto cursor-pointer" data-musician="lucho" data-reveal>
                         <div class="corner-gothic corner-tl scale-[0.5] -top-8 -left-8"></div>
                         <div class="corner-gothic corner-tr scale-[0.5] -top-8 -right-8"></div>
                         <div class="corner-gothic corner-bl scale-[0.5] -bottom-8 -left-8"></div>
@@ -430,6 +430,40 @@
             </div>
         </div>
     </footer>
+
+    <!-- Musician Gallery Modal -->
+    <div id="musician-modal" class="fixed inset-0 z-[200] flex items-center justify-center opacity-0 invisible transition-all duration-500">
+        <div class="absolute inset-0 bg-background/95 backdrop-blur-xl"></div>
+        
+        <div class="relative z-10 w-full max-w-6xl h-full flex flex-col p-6 md:p-12 overflow-hidden">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center mb-8">
+                <h3 id="modal-musician-name" class="font-headline text-3xl md:text-5xl text-white tracking-[0.4em] uppercase"></h3>
+                <button id="close-modal" class="group flex items-center space-x-4 text-primary hover:text-white transition-all">
+                    <span class="font-label text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-all">CERRAR</span>
+                    <span class="material-symbols-outlined text-4xl">close</span>
+                </button>
+            </div>
+
+            <!-- Modal Gallery Content -->
+            <div id="modal-gallery" class="flex-1 overflow-x-auto snap-x snap-mandatory flex items-center gap-8 md:gap-16 no-scrollbar py-8">
+                <!-- Images will be injected here -->
+            </div>
+
+            <!-- Modal Footer / Navigation -->
+            <div class="flex justify-center items-center gap-12 mt-8">
+                <button id="prev-btn" class="text-primary hover:text-white transition-all">
+                    <span class="material-symbols-outlined text-4xl">chevron_left</span>
+                </button>
+                <div id="gallery-counter" class="font-label text-xs tracking-widest text-primary/40">
+                    <span id="current-idx">1</span> / <span id="total-idx">0</span>
+                </div>
+                <button id="next-btn" class="text-primary hover:text-white transition-all">
+                    <span class="material-symbols-outlined text-4xl">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <button id="back-to-top" 
         class="fixed bottom-10 right-10 w-12 h-12 border border-primary/40 bg-background/80 backdrop-blur-sm text-primary flex items-center justify-center rotate-45 opacity-0 invisible hover:bg-primary hover:text-on-primary transition-all duration-500 z-[100] group"

@@ -314,6 +314,96 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Musician Gallery Logic ---
+    const musicianModal = document.getElementById('musician-modal');
+    const modalMusicianName = document.getElementById('modal-musician-name');
+    const modalGallery = document.getElementById('modal-gallery');
+    const closeModal = document.getElementById('close-modal');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const currentIdxEl = document.getElementById('current-idx');
+    const totalIdxEl = document.getElementById('total-idx');
+
+    const musicianData = {
+        'lucas': { name: 'LUCAS', images: ['images/musicians/lucas/1.png', 'images/musicians/lucas/2.png', 'images/musicians/lucas/3.png'] },
+        'nico': { name: 'NICO', images: ['images/musicians/nico/1.png', 'images/musicians/nico/2.png'] },
+        'cata': { name: 'CATA', images: ['images/musicians/cata/1.png', 'images/musicians/cata/2.png'] },
+        'eze': { name: 'EZE', images: ['images/musicians/eze/1.png', 'images/musicians/eze/2.png'] },
+        'guille': { name: 'GUILLE', images: ['images/musicians/guille/1.png', 'images/musicians/guille/2.png'] },
+        'lucho': { name: 'LUCHO', images: ['images/musicians/lucho/1.png', 'images/musicians/lucho/2.png'] }
+    };
+
+    let currentGallery = [];
+    let currentImageIndex = 0;
+
+    const openMusicianGallery = (id) => {
+        const data = musicianData[id];
+        if (!data) return;
+
+        modalMusicianName.textContent = data.name;
+        modalGallery.innerHTML = '';
+        currentGallery = data.images;
+        currentImageIndex = 0;
+
+        currentGallery.forEach((src, idx) => {
+            const container = document.createElement('div');
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `${data.name} ritual ${idx + 1}`;
+            // If image fails to load, we can hide it or use a placeholder
+            img.onerror = () => { container.style.display = 'none'; };
+            container.appendChild(img);
+            modalGallery.appendChild(container);
+        });
+
+        totalIdxEl.textContent = currentGallery.length;
+        updateGalleryUI();
+        
+        musicianModal.classList.add('visible');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    };
+
+    const updateGalleryUI = () => {
+        currentIdxEl.textContent = currentImageIndex + 1;
+        const target = modalGallery.children[currentImageIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+    };
+
+    document.querySelectorAll('[data-musician]').forEach(card => {
+        card.addEventListener('click', () => {
+            openMusicianGallery(card.getAttribute('data-musician'));
+        });
+    });
+
+    closeModal?.addEventListener('click', () => {
+        musicianModal.classList.remove('visible');
+        document.body.style.overflow = '';
+    });
+
+    // Close on background click
+    musicianModal?.addEventListener('click', (e) => {
+        if (e.target === musicianModal || e.target.classList.contains('bg-background/95')) {
+            musicianModal.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+    });
+
+    prevBtn?.addEventListener('click', () => {
+        if (currentImageIndex > 0) {
+            currentImageIndex--;
+            updateGalleryUI();
+        }
+    });
+
+    nextBtn?.addEventListener('click', () => {
+        if (currentImageIndex < currentGallery.length - 1) {
+            currentImageIndex++;
+            updateGalleryUI();
+        }
+    });
+
     // --- Back-to-Top Logic ---
     const backToTopBtn = document.getElementById('back-to-top');
 

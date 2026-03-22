@@ -37,6 +37,38 @@ html {
     animation: pan-sway 6s ease-in-out infinite;
 }
 
+/* Modal & Gallery CSS */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#musician-modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#modal-gallery div {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+}
+
+#modal-gallery img {
+    max-height: 80vh;
+    width: auto;
+    object-fit: contain;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    border: 1px solid rgba(179, 160, 74, 0.1);
+}
+
+/* 3D Merch Cards */
 .merch-3d-card {
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     transform-style: preserve-3d;
