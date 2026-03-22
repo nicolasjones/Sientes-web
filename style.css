@@ -37,6 +37,37 @@ html {
     animation: pan-sway 6s ease-in-out infinite;
 }
 
+/* 3D Merch Cards */
+.merch-3d-container {
+    perspective: 1200px;
+}
+
+.merch-3d-card {
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.7);
+}
+
+.group:hover .merch-3d-card {
+    transform: rotateX(8deg) rotateY(-5deg) translateY(-10px);
+    box-shadow: 0 50px 80px -20px rgba(179, 160, 74, 0.15);
+}
+
+/* Floating shadow element (optional but effective) */
+.merch-3d-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.group:hover .merch-3d-card::after {
+    opacity: 1;
+}
+
 /* Navigation Links */
 .nav-link-active {
     color: var(--color-primary) !important;
