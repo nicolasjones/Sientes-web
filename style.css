@@ -34,7 +34,7 @@ html {
 }
 
 .animate-pan-ritual {
-    animation: pan-sway 10s ease-in-out infinite;
+    animation: pan-sway 6s ease-in-out infinite;
 }
 
 /* Navigation Links */
