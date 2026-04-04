@@ -25,21 +25,20 @@ jobs:
           strip_components: 0 # Keep folder structure
 
       - name: Discovery Step
-              uses: appleboy/ssh-action@master
-                      with:
-                                host: 147.79.84.97
-                                          username: u860820588
-                                                    password: ${{ secrets.SSH_PASSWORD }}
-                                                              port: 65002
-                                                                        script: |
-                                                                                    echo "Current directory:"
-                                                                                                pwd
-                                                                                                            echo "Listing home directory:"
-                                                                                                                        ls -F
-                                                                                                                                    echo "Listing domains directory if it exists:"
-                                                                                                                                                ls -F domains || echo "No domains directory"
-                                                                                                                                                            echo "Listing contents of public_html:"
-                                                                                                                                                                        ls -al public_html
-                                                                                                                                                                                    echo "Checking for default.php in public_html:"
-                                                                                                                                                                                                find public_html -name "default.php" -o -name "index.php"
-                                                                                                                                                                                                
+        uses: appleboy/ssh-action@master
+        with:
+          host: 147.79.84.97
+          username: u860820588
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 65002
+          script: |
+            echo "Current directory:"
+            pwd
+            echo "Listing home directory:"
+            ls -F
+            echo "Listing domains directory if it exists:"
+            ls -F domains || echo "No domains directory"
+            echo "Listing contents of public_html:"
+            ls -al public_html
+            echo "Checking for default.php in public_html:"
+            find public_html -name "default.php" -o -name "index.php"
