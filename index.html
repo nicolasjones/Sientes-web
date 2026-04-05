@@ -238,33 +238,29 @@
                     <h2 class="font-headline text-5xl md:text-8xl text-white uppercase tracking-widest" data-lang-key="videos-title">VIDEOS</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" data-reveal>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto" data-reveal>
                     <!-- Video 1 -->
                     <div class="flex flex-col gap-6 group">
-                        <div class="rounded-lg overflow-hidden border border-primary/10 shadow-2xl relative aspect-video filter grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <!-- Placeholder YouTube Embed (Replace src with actual video url) -->
-                            <iframe class="w-full h-full absolute inset-0" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="Video en Vivo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="rounded-lg overflow-hidden border border-primary/10 shadow-2xl relative aspect-video filter grayscale group-hover:grayscale-0 transition-all duration-700 bg-black">
+                            <video class="w-full h-full absolute inset-0 object-cover" controls preload="metadata">
+                                <source src="videos/ANATOMICO.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de video.
+                            </video>
                         </div>
-                        <h4 class="font-headline text-xl text-white tracking-widest uppercase">EN VIVO</h4>
-                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic">EL RITUAL</p>
+                        <h4 class="font-headline text-xl text-white tracking-widest uppercase">ANATÓMICO</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic">SESIÓN</p>
                     </div>
 
                     <!-- Video 2 -->
                     <div class="flex flex-col gap-6 group">
-                        <div class="rounded-lg overflow-hidden border border-primary/10 shadow-2xl relative aspect-video filter grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <iframe class="w-full h-full absolute inset-0" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="Sesion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="rounded-lg overflow-hidden border border-primary/10 shadow-2xl relative aspect-video filter grayscale group-hover:grayscale-0 transition-all duration-700 bg-black">
+                            <video class="w-full h-full absolute inset-0 object-cover" controls preload="metadata">
+                                <source src="videos/REQUIEM.mp4" type="video/mp4">
+                                Tu navegador no soporta el formato de video.
+                            </video>
                         </div>
-                        <h4 class="font-headline text-xl text-white tracking-widest uppercase">SESIÓN</h4>
-                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic">EL VACÍO</p>
-                    </div>
-
-                    <!-- Video 3 -->
-                    <div class="flex flex-col gap-6 group">
-                        <div class="rounded-lg overflow-hidden border border-primary/10 shadow-2xl relative aspect-video filter grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <iframe class="w-full h-full absolute inset-0" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="Backstage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <h4 class="font-headline text-xl text-white tracking-widest uppercase">BACKSTAGE</h4>
-                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic">ENSAYOS</p>
+                        <h4 class="font-headline text-xl text-white tracking-widest uppercase">RÉQUIEM</h4>
+                        <p class="font-headline text-[10px] text-primary tracking-[0.4em] uppercase mt-2 italic">SESIÓN</p>
                     </div>
                 </div>
             </div>
