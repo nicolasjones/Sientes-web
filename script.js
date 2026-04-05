@@ -335,11 +335,11 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'LUCAS GÓMEZ: VOCALISTA Y COMPOSITOR\n\nMúsico por vocación y amante del arte por sobre todas las cosas. Mi camino inició bajo la influencia de mi madre, una cantante excepcional que grabó en mí la pasión por la interpretación desde temprana edad. Tras años de formación como pianista, el año 2000 marcó mi debut definitivo como vocalista, un rol que abracé como mi verdadero destino.\n\nEn este recorrido tuve la fortuna de cruzar caminos con Nicolás Jones, no solo un bajista de excelencia, sino un hermano de vida y pilar fundamental en mi carrera. Juntos hemos colaborado en decenas de proyectos de la mano de músicos talentosos, experiencias que han moldeado mi trayectoria y enriquecido mi madurez artística.\n\nHe tenido el honor de compartir escenario con grandes referentes, absorbiendo la sabiduría de quienes recorrieron el camino antes que yo para plasmar mis vivencias en dos producciones discográficas de mi autoría. La música es mi lenguaje primordial, mi forma de expresión más auténtica y mi motor constante.\n\nHoy, como líder, compositor y voz de SIENTES, camino a la par de Nicolás Jones con la absoluta certeza de estar en el lugar indicado. Con la mirada firme en el horizonte, avanzamos con paso decidido hacia donde siempre quisimos llegar.',
             images: ['images/musicians/lucas/1.png', 'images/musicians/lucas/2.png', 'images/musicians/lucas/3.png'] 
         },
-        'nico': { name: 'NICO', images: ['images/musicians/nico/1.png', 'images/musicians/nico/2.png'] },
-        'cata': { name: 'CATA', images: ['images/musicians/cata/1.png', 'images/musicians/cata/2.png'] },
-        'eze': { name: 'EZE', images: ['images/musicians/eze/1.png', 'images/musicians/eze/2.png'] },
-        'guille': { name: 'GUILLE', images: ['images/musicians/guille/1.png', 'images/musicians/guille/2.png'] },
-        'lucho': { name: 'LUCHO', images: ['images/musicians/lucho/1.png', 'images/musicians/lucho/2.png'] }
+        'nico': { name: 'NICOLÁS', images: ['images/musicians/nico/1.png', 'images/musicians/nico/2.png'] },
+        'cata': { name: 'CATALINA', images: ['images/musicians/cata/1.png', 'images/musicians/cata/2.png'] },
+        'eze': { name: 'EZEQUIEL', images: ['images/musicians/eze/1.png', 'images/musicians/eze/2.png'] },
+        'guille': { name: 'GUILLERMO', images: ['images/musicians/guille/1.png', 'images/musicians/guille/2.png'] },
+        'lucho': { name: 'LUCIANO', images: ['images/musicians/lucho/1.png', 'images/musicians/lucho/2.png'] }
     };
 
     let currentGallery = [];
