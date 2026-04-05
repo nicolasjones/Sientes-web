@@ -439,6 +439,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Video Auto-Pause Logic ---
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        video.addEventListener('play', () => {
+            videos.forEach(otherVideo => {
+                if (otherVideo !== video && !otherVideo.paused) {
+                    otherVideo.pause();
+                }
+            });
+        });
+    });
+
     // Initialize default album
     if(document.getElementById('tracklist')) {
         switchAlbum('sientes');
