@@ -499,38 +499,38 @@
             <span class="material-symbols-outlined text-4xl">close</span>
         </button>
 
-        <div class="relative z-10 w-full h-full overflow-y-auto px-4 py-24 md:p-16 no-scrollbar flex items-center justify-center">
+        <div class="relative z-10 w-full h-full p-4 md:p-8 flex items-center justify-center">
             
-            <div class="relative w-full max-w-7xl ornamental-frame border border-primary/20 p-8 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-24 metallic-shimmer shadow-2xl">
+            <div class="relative w-full max-w-7xl max-h-[90vh] lg:max-h-[85vh] ornamental-frame border border-primary/20 p-6 md:p-12 lg:p-16 flex flex-col lg:flex-row gap-8 lg:gap-24 metallic-shimmer shadow-2xl overflow-visible">
                 
-                <!-- Gothic Corners -->
-                <div class="corner-gothic corner-tl scale-[0.5] md:scale-[0.8] -top-6 -left-6 md:-top-10 md:-left-10"></div>
-                <div class="corner-gothic corner-tr scale-[0.5] md:scale-[0.8] -top-6 -right-6 md:-top-10 md:-right-10"></div>
-                <div class="corner-gothic corner-bl scale-[0.5] md:scale-[0.8] -bottom-6 -left-6 md:-bottom-10 md:-left-10"></div>
-                <div class="corner-gothic corner-br scale-[0.5] md:scale-[0.8] -bottom-6 -right-6 md:-bottom-10 md:-right-10"></div>
+                <!-- Gothic Corners (Now more stable within viewport) -->
+                <div class="corner-gothic corner-tl scale-[0.4] md:scale-[0.7] -top-5 -left-5 md:-top-8 md:-left-8"></div>
+                <div class="corner-gothic corner-tr scale-[0.4] md:scale-[0.7] -top-5 -right-5 md:-top-8 md:-right-8"></div>
+                <div class="corner-gothic corner-bl scale-[0.4] md:scale-[0.7] -bottom-5 -left-5 md:-bottom-8 md:-left-8"></div>
+                <div class="corner-gothic corner-br scale-[0.4] md:-bottom-8 md:-right-8"></div>
 
-                <!-- Left: Biography -->
-                <div class="lg:w-5/12 flex flex-col justify-center relative z-10">
-                    <h3 id="modal-musician-name" class="font-headline text-4xl md:text-6xl text-white tracking-[0.4em] uppercase mb-8 text-glow-gold"></h3>
-                    <div id="modal-musician-desc" class="font-body text-sm md:text-base text-white/80 leading-relaxed whitespace-pre-line text-justify hidden border-l-2 border-primary/40 pl-6"></div>
+                <!-- Left: Biography (Scrollable inside the frame) -->
+                <div class="flex-1 lg:w-5/12 flex flex-col justify-center min-h-0 overflow-y-auto no-scrollbar py-4 relative z-10">
+                    <h3 id="modal-musician-name" class="font-headline text-3xl md:text-5xl lg:text-6xl text-white tracking-[0.4em] uppercase mb-6 md:mb-8 text-glow-gold"></h3>
+                    <div id="modal-musician-desc" class="font-body text-sm md:text-base text-white/80 leading-relaxed whitespace-pre-line text-justify hidden border-l-2 border-primary/40 pl-6 pr-2"></div>
                 </div>
 
                 <!-- Right: Gallery Slider -->
-                <div class="lg:w-7/12 flex flex-col justify-center h-[50vh] lg:h-[60vh] min-h-[400px] relative z-10">
-                    <div id="modal-gallery" class="w-full h-full overflow-x-auto snap-x snap-mandatory flex items-center gap-8 no-scrollbar scroll-smooth">
+                <div class="flex-1 lg:w-7/12 flex flex-col justify-center min-h-0 relative z-10">
+                    <div id="modal-gallery" class="w-full grow h-[30vh] lg:h-full overflow-x-auto snap-x snap-mandatory flex items-center gap-8 no-scrollbar scroll-smooth">
                         <!-- Images will be injected here -->
                     </div>
 
                     <!-- Navigation Controls -->
-                    <div class="flex justify-center flex-shrink-0 items-center gap-12 mt-8">
-                        <button id="prev-btn" class="w-12 h-12 flex items-center justify-center rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">
-                            <span class="material-symbols-outlined">chevron_left</span>
+                    <div class="flex justify-center flex-shrink-0 items-center gap-8 md:gap-12 mt-6 md:mt-8">
+                        <button id="prev-btn" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-sm md:text-base">chevron_left</span>
                         </button>
-                        <div id="gallery-counter" class="font-label text-xs tracking-widest text-primary/60">
+                        <div id="gallery-counter" class="font-label text-[10px] md:text-xs tracking-widest text-primary/60">
                             <span id="current-idx">1</span> / <span id="total-idx">0</span>
                         </div>
-                        <button id="next-btn" class="w-12 h-12 flex items-center justify-center rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">
-                            <span class="material-symbols-outlined">chevron_right</span>
+                        <button id="next-btn" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-sm md:text-base">chevron_right</span>
                         </button>
                     </div>
                 </div>
