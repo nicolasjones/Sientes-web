@@ -495,8 +495,11 @@
         
         <div class="relative z-10 w-full max-w-6xl h-full flex flex-col p-6 md:p-12 overflow-hidden">
             <!-- Modal Header -->
-            <div class="flex justify-between items-center mb-8">
-                <h3 id="modal-musician-name" class="font-headline text-3xl md:text-5xl text-white tracking-[0.4em] uppercase"></h3>
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <h3 id="modal-musician-name" class="font-headline text-3xl md:text-5xl text-white tracking-[0.4em] uppercase"></h3>
+                    <div id="modal-musician-desc" class="font-body text-sm md:text-base text-white/80 mt-6 max-w-4xl leading-relaxed whitespace-pre-line hidden"></div>
+                </div>
                 <button id="close-modal" class="group flex items-center space-x-4 text-primary hover:text-white transition-all">
                     <span class="font-label text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-all">CERRAR</span>
                     <span class="material-symbols-outlined text-4xl">close</span>

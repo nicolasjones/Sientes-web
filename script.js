@@ -327,9 +327,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('next-btn');
     const currentIdxEl = document.getElementById('current-idx');
     const totalIdxEl = document.getElementById('total-idx');
+    const modalMusicianDesc = document.getElementById('modal-musician-desc');
 
     const musicianData = {
-        'lucas': { name: 'LUCAS', images: ['images/musicians/lucas/1.png', 'images/musicians/lucas/2.png', 'images/musicians/lucas/3.png'] },
+        'lucas': { 
+            name: 'LUCAS', 
+            description: 'Mi nombre es Lucas Gómez 🎶, soy músico 🎵 y por sobre todas las cosas amante de la música ❤️.\n\nDe pequeño fuí cautivado por las canciones que mi madre, una cantante excepcional 🎤, entonaba con pasión.\nSi bien había sido parte anteriormente de otros proyectos como pianista 🎹, en el año 2000 fué la primera vez que subí a un escenario como vocalista 🎤, para no dejar más dicho rol.\n\nTuve la suerte de cruzar caminos con Nicolás Jones, un excelente bajista 🎸 y un hermano para mí 👨🎤.\nA lo largo de mi carrera he tenido el honor de colaborar en decenas de proyectos 🎶, junto a músicos y amigos muy talentosos 🙌. Un capítulo que ha moldeado mi trayectoria y enriquecido mi perspectiva musical.\n\nCompartir escenario con músicos consagrados ha sido un regalo 🎁, una oportunidad para aprender y absorber la sabiduría de quienes han recorrido este camino antes que yo. He plasmado mis sueños y experiencias en dos discos de mi autoría 📀.\n\nLa música es mi lenguaje, mi forma de expresión más auténtica 🎤, y estoy comprometido a continuar compartiendo mi pasión 💪.\n\nHoy como líder, compositor y vocalista de Sientes 🎤🎸, con Nicolás Jones a la par, sé más que nunca que es sin duda el camino correcto hacia donde siempre quise llegar 🚀, y es ahí hacia donde vamos.',
+            images: ['images/musicians/lucas/1.png', 'images/musicians/lucas/2.png', 'images/musicians/lucas/3.png'] 
+        },
         'nico': { name: 'NICO', images: ['images/musicians/nico/1.png', 'images/musicians/nico/2.png'] },
         'cata': { name: 'CATA', images: ['images/musicians/cata/1.png', 'images/musicians/cata/2.png'] },
         'eze': { name: 'EZE', images: ['images/musicians/eze/1.png', 'images/musicians/eze/2.png'] },
@@ -345,6 +350,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!data) return;
 
         modalMusicianName.textContent = data.name;
+        if (data.description) {
+            modalMusicianDesc.textContent = data.description;
+            modalMusicianDesc.classList.remove('hidden');
+        } else {
+            modalMusicianDesc.classList.add('hidden');
+        }
+        
         modalGallery.innerHTML = '';
         currentGallery = data.images;
         currentImageIndex = 0;
