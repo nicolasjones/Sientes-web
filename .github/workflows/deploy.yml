@@ -23,6 +23,7 @@ jobs:
           target: "public_html/"
           rm: true # Clean directory before deploy
           strip_components: 0 # Keep folder structure
+          timeout: 10m
 
       - name: Discovery Step
         uses: appleboy/ssh-action@master
