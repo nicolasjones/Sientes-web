@@ -261,7 +261,24 @@ body::before {
     transform: translateY(0);
 }
 
-/* Custom Scrollbar */
+/* Subtle Scrollbar Utility */
+.scroll-subtle::-webkit-scrollbar {
+    width: 3px;
+}
+
+.scroll-subtle::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-subtle::-webkit-scrollbar-thumb {
+    background: rgba(179, 160, 74, 0.2);
+    border-radius: 10px;
+}
+
+.scroll-subtle::-webkit-scrollbar-thumb:hover {
+    background: rgba(179, 160, 74, 0.6);
+}
+
 ::-webkit-scrollbar {
     width: 6px;
 }
