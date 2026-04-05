@@ -363,9 +363,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentGallery.forEach((src, idx) => {
             const container = document.createElement('div');
+            container.className = 'w-full h-full flex-shrink-0 snap-center flex items-center justify-center';
             const img = document.createElement('img');
             img.src = src;
             img.alt = `${data.name} ritual ${idx + 1}`;
+            img.className = 'max-w-full max-h-full object-contain rounded-xl drop-shadow-2xl';
             // If image fails to load, we can hide it or use a placeholder
             img.onerror = () => { container.style.display = 'none'; };
             container.appendChild(img);
@@ -383,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIdxEl.textContent = currentImageIndex + 1;
         const target = modalGallery.children[currentImageIndex];
         if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            modalGallery.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
         }
     };
 
